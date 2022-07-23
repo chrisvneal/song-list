@@ -33,5 +33,15 @@ export const songs = [
     title: "Big Titties",
     artist: "Pretty TyReeq",
     genre: "R & B"
+  },
+  {
+    title: "I Own The Block",
+    artist: "Creepy Bandits",
+    genre: "Trap"
+  },
+  {
+    title: "Any Given Day",
+    artist: "Dem Bottom Boyz",
+    genre: "Trap"
   }
 ];
