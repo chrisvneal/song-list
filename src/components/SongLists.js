@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import SongList from "./SongList";
 
 const SongLists = () => {
-  return (
-    <div className="song-lists">
-      <SongList genre="Hip-Hop" />
-      <SongList genre="R &amp; B" />
-      <SongList genre="Trap" />
-    </div>
-  );
+  const [genres] = useState(["Hip-Hop", "R & B", "Trap"]);
+  const renderLists = genres.map((genre) => <SongList genre={genre} />);
+
+  return <div className="song-lists">{renderLists}</div>;
 };
 
 export default SongLists;
