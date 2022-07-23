@@ -1,6 +1,7 @@
 import React from "react";
 
-const SongItem = ({ title, artist, genre }) => {
+const SongItem = ({ song }) => {
+  const { title, artist, genre } = song;
   return (
     <li className="song-item">
       <span className="song-title">{title}</span>

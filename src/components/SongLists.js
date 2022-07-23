@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { songs } from "../data/songs";
-
 import SongList from "./SongList";
 
 const SongLists = () => {
