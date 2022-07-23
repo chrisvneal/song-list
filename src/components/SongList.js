@@ -1,15 +1,13 @@
 import React from "react";
 
+import SongItem from "./SongItem";
+
 const SongList = ({ genre, songs }) => {
   return (
     <div className="song-list">
       <h3 className="song-genre">{genre}</h3>
       <ul>
-        <li className="song-item">
-          <span className="song-title">The Time Has Come</span>
-          <span className="song-artist">Chris Rockman</span>
-          <span className="song-genre">Hip-Hop</span>
-        </li>
+        <SongItem title="The Time Has Come" artist="MCBeth" genre="Hip Hop" />
       </ul>
     </div>
   );
