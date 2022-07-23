@@ -4,9 +4,12 @@ export default function App() {
   return (
     <div className="App">
       <section className="song-input--section">
-        <h2>Song Input</h2>
-        Song Title: <input />
-        Song Genre: <input />
+        <form>
+          <h2>Song Input</h2>
+          Song Title: <input type="text" />
+          Song Genre: <input type="text" />
+          <button>Submit Song</button>
+        </form>
       </section>
 
       <section className="songs">
