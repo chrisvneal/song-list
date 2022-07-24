@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addSongAction } from "../actions/index";
+import { addSongAction } from "../actions";
+
+const deleteFields = () => {
+  document.querySelector("#song-input").value = "";
+  document.querySelector("#artist-input").value = "";
+};
 
 const SongInput = ({ addSongAction }) => {
-  const deleteFields = () => {
-    document.querySelector("#song-input").value = "";
-    document.querySelector("#artist-input").value = "";
-  };
   return (
     <section className="song-input--section">
       <form>
@@ -22,13 +23,11 @@ const SongInput = ({ addSongAction }) => {
         <button
           onClick={(e) => {
             e.preventDefault();
-
             const title = document.querySelector("#song-input").value;
             const artist = document.querySelector("#artist-input").value;
             const genre = document.querySelector("#select-input").value;
 
             addSongAction(title, artist, genre);
-
             deleteFields();
 
             document.querySelector("#song-input").focus();
