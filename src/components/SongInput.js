@@ -1,39 +1,41 @@
 import React from "react";
-import { useRef } from "react";
 import { connect } from "react-redux";
 import { addSongAction } from "../actions/index";
 
-const SongInput = ({ dispatch }) => {
-  const inputElement = useRef();
-  const songInput = inputElement.current;
-
-  const artistInputElement = useRef();
-  const artistInput = artistInputElement.current;
-
-  const dropdownInputElement = useRef();
-  const dropdownInput = dropdownInputElement.current;
-
-  const addSong = (e) => {
-    e.preventDefault();
-    const title = songInput.value;
-    const artist = artistInput.value;
-    const genre = dropdownInput.value;
-
-    dispatch(addSongAction(title, artist, genre));
-    // console.log(title, artist, genre);
+const SongInput = ({ addSongAction }) => {
+  const deleteFields = () => {
+    document.querySelector("#song-input").value = "";
+    document.querySelector("#artist-input").value = "";
   };
   return (
     <section className="song-input--section">
       <form>
         <h2>Song Input</h2>
-        Song Title: <input ref={inputElement} type="text" />
-        Song Artist: <input ref={artistInputElement} type="text" />
+        Song Title: <input id="song-input" type="text" />
+        Song Artist: <input id="artist-input" type="text" />
         Song Genre:{" "}
-        <select ref={dropdownInputElement}>
-          <option value="hiphop">Hip-Hop</option>
-          <option value="rnb">R &amp; B</option>
+        <select id="select-input">
+          <option value="Hip-Hop">Hip-Hop</option>
+          <option value="R & B">R &amp; B</option>
+          <option value="Trap">Trap</option>
         </select>
-        <button onClick={addSong}>Submit Song</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+
+            const title = document.querySelector("#song-input").value;
+            const artist = document.querySelector("#artist-input").value;
+            const genre = document.querySelector("#select-input").value;
+
+            addSongAction(title, artist, genre);
+
+            deleteFields();
+
+            document.querySelector("#song-input").focus();
+          }}
+        >
+          Submit Song
+        </button>
       </form>
     </section>
   );

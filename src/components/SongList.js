@@ -8,9 +8,8 @@ const SongList = ({ genre, songs }) => {
     <div className="song-list">
       <h3 className="song-genre">{genre}</h3>
       <ul>
-        {/* <SongItem title="The Time Has Come" artist="MCBeth" genre="Hip Hop" /> */}
         {songs.map((song) => (
-          <SongItem song={song} />
+          <SongItem song={song} key={song.title} />
         ))}
       </ul>
     </div>
