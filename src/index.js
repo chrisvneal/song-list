@@ -10,8 +10,6 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 const store = createStore(reducers);
 
-// console.log(store.getState())
-
 root.render(
   <Provider store={store}>
     <App />
