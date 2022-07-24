@@ -8,8 +8,7 @@ import SongLists from "./SongLists";
 const App = ({ genres }) => {
   return (
     <div className="App">
-      <SongInput />
-
+      <SongInput genres={genres} />
       <SongLists genres={genres} />
     </div>
   );
@@ -17,6 +16,7 @@ const App = ({ genres }) => {
 
 const mapStateToProps = (state) => {
   return {
+    // Use lodash to create unique list of genres for props
     genres: _.uniq(_.map(state.songs, "genre"))
   };
 };

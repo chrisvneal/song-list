@@ -7,19 +7,19 @@ const deleteFields = () => {
   document.querySelector("#artist-input").value = "";
 };
 
-const SongInput = ({ addSongAction }) => {
+const SongInput = ({ genres, addSongAction }) => {
+  const availableGenres = genres.map((genre) => (
+    <option value={genre} key={genre}>
+      {genre}
+    </option>
+  ));
   return (
     <section className="song-input--section">
       <form>
         <h2>Song Input</h2>
         Song Title: <input id="song-input" type="text" />
         Song Artist: <input id="artist-input" type="text" />
-        Song Genre:{" "}
-        <select id="select-input">
-          <option value="Hip-Hop">Hip-Hop</option>
-          <option value="R & B">R &amp; B</option>
-          <option value="Trap">Trap</option>
-        </select>
+        Song Genre: <select id="select-input">{availableGenres}</select>
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -28,8 +28,8 @@ const SongInput = ({ addSongAction }) => {
             const genre = document.querySelector("#select-input").value;
 
             addSongAction(title, artist, genre);
-            deleteFields();
 
+            deleteFields();
             document.querySelector("#song-input").focus();
           }}
         >
