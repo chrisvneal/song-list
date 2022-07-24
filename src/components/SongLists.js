@@ -9,10 +9,10 @@ const SongLists = ({ genres }) => {
   ));
 
   return (
-    <div className="song-lists">
+    <section className="song-lists">
       <h2>Song Lists</h2>
       {renderLists}
-    </div>
+    </section>
   );
 };
 
