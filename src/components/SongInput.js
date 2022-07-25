@@ -17,9 +17,16 @@ const SongInput = ({ genres, addSongAction }) => {
     <section className="song-input--section">
       <form>
         <h2>Song Input</h2>
-        Song Title: <input id="song-input" type="text" />
-        Song Artist: <input id="artist-input" type="text" />
-        Song Genre: <select id="select-input">{availableGenres}</select>
+        <p>
+          <span>Song Title:</span> <input id="song-input" type="text" />
+        </p>
+        <p>
+          <span>Song Artist:</span> <input id="artist-input" type="text" />
+        </p>
+        <p>
+          <span>Song Genre:</span>{" "}
+          <select id="select-input">{availableGenres}</select>
+        </p>
         <button
           onClick={(e) => {
             e.preventDefault();

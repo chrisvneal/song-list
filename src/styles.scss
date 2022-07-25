@@ -1,12 +1,65 @@
+$list-header--color: #eee;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
 }
 section {
   margin-bottom: 30px;
 }
 
 h2 {
+  margin-bottom: 20px;
+} 
+
+h3 {
   margin-bottom: 10px;
 }
+
+
+// Song Input section styling
+.song-input--section {
+  p {
+    margin-bottom: 15px;
+    display: flex;
+
+    span {
+      display: inline-block;
+      width: 95px;
+    }
+
+    input {
+      flex: 1
+    }
+  }
+   form button {
+    display: block;
+    height: 50px;
+    width: 120px;
+    border: none;
+    border: 1px solid darken(#eee, 10%);
+    cursor: pointer;
+    margin: 20px 0;
+    }
+
+    select {
+      width: 80px;
+    }
+}
+
+// Song List styling
+.song-list:not(:last-child) {
+  margin-bottom: 30px; 
+}
+
+
+.song-item {
+  margin-bottom: 10px;
+}
+
+
