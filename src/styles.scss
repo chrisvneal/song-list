@@ -1,4 +1,5 @@
-$list-header--color: #eee;
+$list-item--padding: 8px 0 8px 5px;
+$header-bg--color: rgb(224, 61, 224);
 
 * {
   margin: 0;
@@ -18,7 +19,11 @@ h2 {
 } 
 
 h3 {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
+  padding: $list-item--padding;
+  border-bottom: 2px solid #eee;
+  background: $header-bg--color;
+  color: white;
 }
 
 
@@ -27,6 +32,7 @@ h3 {
   p {
     margin-bottom: 15px;
     display: flex;
+    align-items: center;
 
     span {
       display: inline-block;
@@ -34,7 +40,8 @@ h3 {
     }
 
     input {
-      flex: 1
+      flex: 1;
+      height: 26px;
     }
   }
    form button {
@@ -54,12 +61,28 @@ h3 {
 
 // Song List styling
 .song-list:not(:last-child) {
-  margin-bottom: 30px; 
+  margin-bottom: 20px;
+}
+
+.song-count {
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 
 .song-item {
   margin-bottom: 10px;
+  background: #eee;
+  padding: $list-item--padding;
+
+  span {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .song-artist {
+    font-style: italic;
+  }
 }
 
 
