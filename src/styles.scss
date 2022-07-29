@@ -86,4 +86,14 @@ h3 {
   }
 }
 
+input {
+  border: none;
+  border-bottom: 1px solid darken(#eee, 7%);
+  font-size: 1.1rem;
+
+  &:focus {
+    outline: none;
+     border-bottom: 1px solid $header-bg--color;
+  }
+}
 
