@@ -53,6 +53,10 @@ h3 {
     border: 1px solid darken(#eee, 10%);
     cursor: pointer;
     margin: 20px 0;
+
+    &:hover {
+      background: lighten($header-bg--color, 35%)
+    }
     }
 
     select {
