@@ -34,10 +34,12 @@ const SongInput = ({ genres, addSongAction }) => {
             const artist = document.querySelector("#artist-input").value;
             const genre = document.querySelector("#select-input").value;
 
-            addSongAction(title, artist, genre);
+            if (title && artist) {
+              addSongAction(title, artist, genre);
 
-            deleteFields();
-            document.querySelector("#song-input").focus();
+              deleteFields();
+              document.querySelector("#song-input").focus();
+            }
           }}
         >
           Submit Song
